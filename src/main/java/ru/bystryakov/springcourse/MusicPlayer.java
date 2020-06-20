@@ -22,8 +22,8 @@ public class MusicPlayer {
 //    public void playMusic() {
 //            System.out.println("Играет " + classicalMusic.getSong());
 //    }
-    @Autowired
-    private Music music;
+//    @Autowired
+//    private Music music;
     // реализуем IoC
 //    //@Autowired
 //    public MusicPlayer(Music music) {
@@ -36,9 +36,16 @@ public class MusicPlayer {
 ////    public void asdfr(Music music) {  // работает! имя метода не важно!
 //        this.music = music;
 //    }
-
+    private ClassicalMusic classicalMusic;
+    private RockMusic rockMusic;
+    @Autowired          // работает и без нее !
+    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic) {
+        this.classicalMusic = classicalMusic;
+        this.rockMusic = rockMusic;
+    }
 
     public void playMusic() {
-        System.out.println("Играет " + music.getSong());
+        System.out.println("Играет " + classicalMusic.getSong());
+        System.out.println("Играет " + rockMusic.getSong());
     }
 }
