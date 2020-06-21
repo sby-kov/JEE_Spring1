@@ -48,4 +48,9 @@ public class MusicPlayer {
         System.out.println("Играет " + classicalMusic.getSong());
         System.out.println("Играет " + rockMusic.getSong());
     }
+    public String sayMusicList() {
+        return "  1. " + classicalMusic.getSong() + "\n" +
+               "  2. " + rockMusic.getSong();
+    }
+
 }

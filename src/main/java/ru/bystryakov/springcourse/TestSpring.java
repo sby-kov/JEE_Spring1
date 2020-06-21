@@ -2,6 +2,8 @@ package ru.bystryakov.springcourse;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.awt.*;
+
 /**
  * User:  Marina
  * Дата:  20.05.2020
@@ -27,9 +29,12 @@ public class TestSpring {
         // проверка аннотации Component
         System.out.println("--- проверка аннотации Autowired ---");
         // получим MusicPlayer из spring context
-        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-        musicPlayer.playMusic();
-
+//        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+//        musicPlayer.playMusic();
+//      теперь сделаем Бины: computer - musicPlayer - anyMusic
+        System.out.println("--- вложенные Autowired ---");
+        Computer computer = context.getBean("computer", Computer.class);
+        System.out.println(computer);
         context.close();
     }
 }
